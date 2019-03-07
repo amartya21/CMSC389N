@@ -101,3 +101,36 @@
   - If returned result negative, then a is sorted before b
   - If return result positive, then a is sorted after b
   - Sorts array values as strings by default (i.e. 25 comes after 100 because 2 is bigger than 1)
+
+## IIFEs
+
+- Invoked immediately after declaration (do not need to be separately invoked)
+
+```javascript
+(function (x, y) {
+    console.log(x * y);
+} (4, 6));
+```
+
+## Function Context
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#Function_context
+- Always look to the left of a function invocation to determine what `this` is
+- `this` only depends on the way the function is invoked (NOTHING else)
+- The `this` of arrow functions is the `this` at which they were declared
+- Solutions:
+  - arrow function
+  - self/that trick
+  - use bind
+
+## Query Selectors
+
+```javascript
+    // matches the first element in the DOM with the id foo
+    document.querySelector("#foo");
+    
+    // matches first element in the DOM with the class bar
+    document.querySelector(".bar");
+```
+
+## Event Propagation
