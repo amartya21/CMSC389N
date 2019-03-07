@@ -126,11 +126,124 @@
 ## Query Selectors
 
 ```javascript
-    // matches the first element in the DOM with the id foo
-    document.querySelector("#foo");
+// matches the first element in the DOM with the id foo
+document.querySelector("#foo");
     
-    // matches first element in the DOM with the class bar
-    document.querySelector(".bar");
+// matches first element in the DOM with the class bar
+document.querySelector(".bar");
 ```
 
 ## Event Propagation
+
+- Events "bubble up" by passing event up the DOM tree (event propagation starts at innermost element)
+- Events "capture" by passing event down through DOM tree (propagation starts at outermost element)
+- Propagation only happens if event listeners on nested elements are for the SAME event (i.e. all elements handle "click")
+
+```javascript
+// addEventListener default is to enable bubbling
+document.getElementById("OuterElement").addEventListener("click", () => alert("OuterElement"));
+document.getElementById("InnerElement").addEventListener("click", () => alert("InnerElement"));
+document.getElementById("WayInnerElement").addEventListener("click", () => alert("WayInnerElement"));
+
+// adding true as the third argument to addEventListener() enables capturing
+document.getElementById("OuterElement").addEventListener("click", () => alert("OuterElement"), true);
+document.getElementById("InnerElement").addEventListener("click", () => alert("InnerElement"), true);
+document.getElementById("WayInnerElement").addEventListener("click", () => alert("WayInnerElement"), true);
+```
+
+## JS Objects
+
+- Searching along prototype chain until desired property/function found is called the *delegated pattern*
+
+```javascript
+// Example of inheritance
+
+// Object-specific data that all Students should have
+function Student(name, credits, courses) {
+    this.name = name;
+    this.credits = credits;
+    this.courses = courses;
+}
+
+// Data and functions to be inherited by all subclasses of Student        
+Student.prototype = {
+    constructor: Student,  
+    college: "UMCP",
+    info: function() {
+        document.writeln("Name: " + this.name);
+        document.writeln(", Credits: " + this.credits);
+        document.writeln(", Courses: " + this.courses + " ");
+        document.writeln(", College: " + this.college + "<br />");
+    }
+};
+
+function GradStudent(name, credits, courses, advisor) {
+
+	// Calls super class constructor
+    Student.call(this, name, credits, courses);
+    
+    this.advisor = advisor;
+}
+
+// Setting GradStudent prototype to Student
+GradStudent.prototype = new Student();
+
+// Setting constructor property on GradStudent prototype
+GradStudent.prototype.constructor = GradStudent;
+
+// Adding a GradStudent-specific function on GradStudent prototype
+GradStudent.prototype.getAdvisor = function() { return this.advisor; }
+```
+
+```javascript
+// Custom implementation of the new keyword
+
+function customNew(constructor) {
+    
+    // Step 1 - create blank/empty object
+    let obj = {};
+
+    // Step 2 - set prototype of obj to constructor prototype
+    Object.setPrototypeOf(obj, constructor.prototype);
+
+    // Step 3 - invoke constructor with apply setting obj to be this
+    constructor.apply(obj, Array.from(arguments).slice(1));
+
+    // Step 4 - return object
+    return obj;
+}
+
+let customStudent = customNew(Student, "Stefan", "Edberg");
+````
+
+- Prototype pattern: adding all properties and functions on the prototype (con: modifying prototype affects all objects)
+- Constructor pattern: adding all properties and functions in constructor (con: duplicates all shared data unnecessarily)
+- Default pattern: adding all object-specific properties/functions in constructor and all shared properties/functions on prototype
+
+## Classes
+
+```javascript
+class Student {
+    
+    // Student constructor function
+	constructor(name, age) {
+		this.name = name;
+		this.age = age;
+	}
+	
+	// Function on Student prototype
+	toString() {
+		return this.name + " " + this.age;
+	}
+	
+	// Function on Student prototype
+	getName() {
+		return this.name;
+	}
+	
+	// Can be called like Student.getCollegeName()
+	static getCollegeName() {
+		return "UMCP";
+	}
+}
+```
