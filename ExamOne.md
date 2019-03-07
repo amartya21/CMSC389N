@@ -1,4 +1,4 @@
-# CMSC 389N Exam One Study Guide
+# Exam One
 
 ## HTML
 
