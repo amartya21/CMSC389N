@@ -33,3 +33,37 @@
 
 - nesting components to make code more modular 
 - each component has a clearly specified function
+
+## Example
+
+```javascript
+class Counter extends React.Component {
+
+  constructor() {
+    super();
+    this.state = { count: 10 };
+    this.increment = this.increment.bind(this);
+    this.decrement = this.decrement.bind(this);
+  }
+
+  render() {
+    return (
+        <div>
+          <button onClick={this.increment}> Increment </button>
+          <p> Current count is: {this.state.count} </p>
+          <button onClick={this.decrement}> Decrement </button>
+        </div>
+    );
+  }
+
+  increment() {
+    this.setState({ count: this.state.count + 1 });
+  }
+
+  decrement() {
+    this.setState({ count: this.state.count - 1 });
+  }
+}
+
+ReactDOM.render( <Counter/>, document.querySelector("#container") );
+```
