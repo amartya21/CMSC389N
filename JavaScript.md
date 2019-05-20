@@ -137,7 +137,7 @@ document.querySelector(".bar");
 
 - Events "bubble up" by passing event up the DOM tree (event propagation starts at innermost element)
 - Events "capture" by passing event down through DOM tree (propagation starts at outermost element)
-- Propagation only happens if event listeners on nested elements are for the SAME event (i.e. all elements handle "click")
+- Propagation only happens if event listeners on nested elements are for the SAME event (i.e. "click")
 
 ```javascript
 // addEventListener default is to enable bubbling
