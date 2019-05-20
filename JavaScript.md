@@ -218,7 +218,7 @@ let customStudent = customNew(Student, "Stefan", "Edberg");
 
 - Prototype pattern: adding all properties and functions on the prototype (con: modifying prototype affects all objects)
 - Constructor pattern: adding all properties and functions in constructor (con: duplicates all shared data unnecessarily)
-- Default pattern: adding object-specific properties/functions in constructor and shared properties/functions on prototype
+- Default pattern: object-specific properties/functions in constructor and shared properties/functions on prototype
 
 ## Classes
 
