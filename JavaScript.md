@@ -66,7 +66,7 @@
   - `shift()`: returns new array containing elements at indices [1, n]
   - `unshift()`: returns original array when called on new array after a shift
   - `indexOf()`: returns index of the value passed in or -1 if it doesn't exist in the array
-  - `slice()`: returns a new array including start index and excluding end index (shallow copy if arguments omitted)
+  - `slice()`: returns a new array (shallow copy) including start index and excluding end index
 - length: gives size of array even if all elements aren't filled (i.e. array w/ 100 elements but values at indices 1, 2, 99)
 
 ## Var/Let/Const
