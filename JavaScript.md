@@ -54,7 +54,7 @@
 
 ## DOM
 
-- document Object Model: tree-like structure representing the page where HTML elements are nodes
+- (document object model): tree-like structure representing the page where HTML elements are nodes
 
 ## Arrays
 
