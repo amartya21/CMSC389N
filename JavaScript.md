@@ -210,7 +210,7 @@ function customNew(constructor) {
     // Step 3 - invoke constructor with apply setting obj to be this
     constructor.apply(obj, Array.from(arguments).slice(1));
 
-    // Step 4 - return object
+    // Step 4 - return object (or object that constructor function explicity returns)
     return obj;
 }
 
