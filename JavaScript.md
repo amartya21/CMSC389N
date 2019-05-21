@@ -49,12 +49,12 @@
 
 ## Global Objects
 
-- Window: first thing that gets loaded into the browser (properties like length, innerWidth, innerHeight, name)
-- Document: loaded inside the window object (properties like title, URL, cookie)
+- window: first thing that gets loaded into the browser (properties like length, innerWidth, innerHeight, name)
+- document: loaded inside the window object (properties like title, URL, cookie)
 
 ## DOM
 
-- Document Object Model: tree-like structure representing the page where HTML elements are nodes
+- document Object Model: tree-like structure representing the page where HTML elements are nodes
 
 ## Arrays
 
@@ -67,14 +67,15 @@
   - `unshift()`: returns original array when called on new array after a shift
   - `indexOf()`: returns index of the value passed in or -1 if it doesn't exist in the array
   - `slice()`: returns a new array including start index and excluding end index (shallow copy if arguments omitted)
-- Length: gives size of array even if all elements aren't filled (i.e. array w/ 100 elements but values at indices 1, 2, 99)
+- length: gives size of array even if all elements aren't filled (i.e. array w/ 100 elements but values at indices 1, 2, 99)
 
 ## Var/Let/Const
 
 - `var`: variable is function scoped and hoisted (can be used before declaration in the same scope)
+  - note that a hoisted variable can be used but not 
 - `let`: variable is block scoped and hoisted (cannot be used before delcaration)
-  - Functions in the form `function a(){}` are hoisted 
-  - Functions in the form `let a = function(){}` are not hoisted
+  - functions in the form `function a(){}` are hoisted 
+  - functions in the form `let a = function(){}` are not hoisted
 - `const`: variable value cannot be changed after initialization and variable is block-scoped
 
 ## Null/Undefined/NaN
@@ -94,13 +95,13 @@
 - `map()`: creates a new array with the results of calling a provided function on every element of the calling array
 - `filter()`: creates a new array with all elements that pass the test implemented by the provided function
 - `reduce()`: applies function against accumulator and array elements (from left to right) to reduce to a single value
-  - First argument is function
-  - Second argument is initial value
+  - first argument is function
+  - second argument is initial value
 - `sort()`: pass in comparison function in order to sort array by custom comparator
   - `function (a, b) {}` is the comparison function
-  - If returned result negative, then a is sorted before b
-  - If return result positive, then a is sorted after b
-  - Sorts array values as strings by default (i.e. 25 comes after 100 because 2 is bigger than 1)
+  - if returned result negative, then a is sorted before b
+  - if return result positive, then a is sorted after b
+  - sorts array values as strings by default (i.e. 25 comes after 100 because 2 is bigger than 1)
 
 ## IIFEs
 
@@ -115,10 +116,10 @@
 ## Function Context
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#Function_context
-- Always look to the left of a function invocation to determine what `this` is
+- always look to the left of a function invocation to determine what `this` is
 - `this` only depends on the way the function is invoked (NOTHING else)
-- The `this` of arrow functions is the `this` of the outer lexical context
-- Solutions:
+- the `this` of arrow functions is the `this` of the outer lexical context
+- solutions:
   - arrow function
   - self/that trick
   - use bind
@@ -135,9 +136,9 @@ document.querySelector(".bar");
 
 ## Event Propagation
 
-- Events "bubble up" by passing event up the DOM tree (event propagation starts at innermost element)
-- Events "capture" by passing event down through DOM tree (propagation starts at outermost element)
-- Propagation only happens if event listeners on nested elements are for the SAME event (i.e. "click")
+- events "bubble up" by passing event up the DOM tree (event propagation starts at innermost element)
+- events "capture" by passing event down through DOM tree (propagation starts at outermost element)
+- propagation only happens if event listeners on nested elements are for the SAME event (i.e. "click")
 
 ```javascript
 // addEventListener default is to enable bubbling
@@ -153,7 +154,7 @@ document.getElementById("WayInnerElement").addEventListener("click", () => alert
 
 ## JS Objects
 
-- Searching along prototype chain until desired property/function found is called the *delegated pattern*
+- searching along prototype chain until desired property/function found is called the *delegated pattern*
 
 ```javascript
 // Example of inheritance
@@ -216,9 +217,9 @@ function customNew(constructor) {
 let customStudent = customNew(Student, "Stefan", "Edberg");
 ````
 
-- Prototype pattern: adding all properties and functions on the prototype (con: modifying prototype affects all objects)
-- Constructor pattern: adding all properties and functions in constructor (con: duplicates all shared data unnecessarily)
-- Default pattern: object-specific properties/functions in constructor and shared properties/functions on prototype
+- prototype pattern: adding all properties and functions on the prototype (con: modifying prototype affects all objects)
+- constructor pattern: adding all properties and functions in constructor (con: duplicates all shared data unnecessarily)
+- default pattern: object-specific properties/functions in constructor and shared properties/functions on prototype
 
 ## Classes
 
