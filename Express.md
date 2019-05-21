@@ -105,3 +105,10 @@ exports.author_update = function(req, res) {
   });
 };
 ```
+
+## Details
+
+- we use the third party package mongoose (MongoDB driver for Node.js)
+- RESTful API uses HTTP as protocol for data transfer and intra-application communication
+  - replaces SOAP (service-oriented architecture pattern) which used XML instead of JSON 
+  - REST is also stateless so making a million API requests will not have any associated state
