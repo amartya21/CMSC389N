@@ -56,7 +56,9 @@ authorRouter.use(function (req, res, next) {
 // router.route(URL string).http_verb(callback function (either from controller or not))
 authorRouter.route('/')
   .get(author_controller.author_list)  
-  .post(author_controller.author_create_post);
+  .post(author_controller.author_create_post)
+  .put(author_controller.author_update)
+  .delete(author_controller.author_delete);
 
 // exporting the router to be used
 module.exports = authorRouter;
