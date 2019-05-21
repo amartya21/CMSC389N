@@ -2,7 +2,7 @@
 
 ## Props vs. State
 
-- **props**: variables that are passed to a component by a parent component (`this.props`)
+- **props**: variables that are passed to a child component by a parent component (`this.props`)
   - props are effectively static and read-only in the child component
 - **state**: variables that are initialized and managed by component itself (`this.state`)
   - state should never be mutated directly (use `setState()` instead)
