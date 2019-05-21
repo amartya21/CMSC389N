@@ -225,7 +225,7 @@ let customStudent = customNew(Student, "Stefan", "Edberg");
 ```javascript
 class Student {
     
-    // Student constructor function
+    	// Student constructor function
 	constructor(name, age) {
 		this.name = name;
 		this.age = age;
