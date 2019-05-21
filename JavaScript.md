@@ -93,7 +93,7 @@
 
 - `map()`: creates a new array with the results of calling a provided function on every element of the calling array
 - `filter()`: creates a new array with all elements that pass the test implemented by the provided function
-- `reduce()`: applies function against an accumulator and each array element (from left to right) to reduce to a single value
+- `reduce()`: applies function against accumulator and array elements (from left to right) to reduce to a single value
   - First argument is function
   - Second argument is initial value
 - `sort()`: pass in comparison function in order to sort array by custom comparator
