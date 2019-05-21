@@ -117,7 +117,7 @@
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#Function_context
 - Always look to the left of a function invocation to determine what `this` is
 - `this` only depends on the way the function is invoked (NOTHING else)
-- The `this` of arrow functions is the `this` at which they were declared
+- The `this` of arrow functions is the `this` of the outer lexical context
 - Solutions:
   - arrow function
   - self/that trick
