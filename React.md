@@ -3,10 +3,15 @@
 ## Props vs. State
 
 - **props**: variables that are passed to a component by a parent component (`this.props`)
-  - props should never be changed in a child component
-  - allow child components to access methods defined in parent
+  - props are effectively static and read-only in the child component
 - **state**: variables that are initialized and managed by component itself (`this.state`)
   - state should never be mutated directly (use `setState()` instead)
+  - state is private or local to component that is managing it
+  
+## Data Flow
+
+- data flow in react is unidirectional (moves via props from parent components to child components)
+- child can modify parent's state iff parent passes a reference to its `setState()` method via props
   
 ## Lifecycle Methods
 
@@ -16,6 +21,7 @@
 - `constructor()`: called first in instantiating any class in JavaScript
 - `render()`: outputs the representation of the component in JSX
 - `componentDidMount()`: called exactly once immediately after `render()`
+  - use case: don't call an API if your component doesn't end up getting put into the DOM (saves app from crashing)
 
 ### Updating
 
@@ -25,14 +31,9 @@
 
 ## Design Patterns
 
-### Immutability
-
 - `state` should never be mutated directly (all updates should happen through `setState()`)
-
-### Composition
-
-- nesting components to make code more modular 
-- each component has a clearly specified function
+- this immutability enables composition of components and higher order components
+  - higher order component has a base (nested) component as an argument
 
 ## Example
 
