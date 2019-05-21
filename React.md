@@ -38,7 +38,9 @@
 ## Example
 
 ```javascript
-class Counter extends React.Component {
+import React, { Component } from 'react';
+
+class Counter extends Component {
 
   constructor() {
     super();
@@ -66,5 +68,14 @@ class Counter extends React.Component {
   }
 }
 
-ReactDOM.render( <Counter/>, document.querySelector("#container") );
+export default Counter;
 ```
+
+### Details
+
+- component's `render()` can only have one top-level component 
+- input element as `<Counter/>` in JSX if it has no children
+- input element as `<Counter>...</Counter>` in JSX if it has children
+- all class-based components must have a `render()` that returns something
+- always export any components that you create so they can be used elsewhere
+- constructors are required in class-based components only if there is state to be set and/or binding to be done
