@@ -71,9 +71,9 @@
 
 ## Var/Let/Const
 
-- `var`: variable is function scoped and hoisted (can be used before declaration in the same scope)
+- `var`: variable is function-scoped and hoisted (can be used before declaration in the same scope)
   - keep in mind that a hoisted variable can be used before initialization but it will be undefined 
-- `let`: variable is block scoped and hoisted (cannot be used before delcaration)
+- `let`: variable is block-scoped and not hoisted (cannot be used before delcaration)
   - functions in the form `function a(){}` are hoisted 
   - functions in the form `let a = function(){}` are not hoisted
 - `const`: variable value cannot be changed after initialization and variable is block-scoped
