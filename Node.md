@@ -3,7 +3,7 @@
 ## Promises
 
 - promises have three states:
-  - pending: promise is not resolved or rejected yet (i.e. it's in progress)
+  - pending: promise has not resolved or rejected yet (i.e. it's in progress)
   - fulfilled: promise has resolved
   - rejected: promise has rejected
 
