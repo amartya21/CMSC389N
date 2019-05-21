@@ -91,7 +91,7 @@ exports.author_delete = function(req, res) {                // finds and deletes
     });
   });
 };
-                                                            // finds an Author and performs an update (for use with PUT)
+                                                            // finds an Author and updates (for use with PUT)
 exports.author_update = function(req, res) {
   Author.findByIdAndUpdate(req.params.authorId, {$set:req.body}, {new: true}, function(err, result) {
     if(err){
