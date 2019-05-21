@@ -106,6 +106,10 @@ exports.author_update = function(req, res) {
 };
 ```
 
+```javascript
+app.use('/api/v1/authors', authorsRouter);                 // enabling app to use the appropriate router
+```
+
 ## Details
 
 - we use the third party package mongoose (MongoDB driver for Node.js)
