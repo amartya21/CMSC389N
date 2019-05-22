@@ -59,14 +59,14 @@
 ## Arrays
 
 - Methods
-  - `reverse()`: reverses the array
-  - `concat()`: concatenates the two arrays
   - `push()`: appends element to end of array
   - `pop()`: removes element from end of array
-  - `shift()`: returns new array containing elements at indices [1, n]
-  - `unshift()`: adds item(s) to the beginning of the array and returns new array length
-  - `indexOf()`: returns index of the value passed in or -1 if it doesn't exist in the array
-  - `slice()`: returns a new array (shallow copy) including start index and excluding end index
+  - `reverse()`: reverses the array and returns the reversed array
+  - `concat()`: concatenates the two arrays and returns new concatenated array
+  - `shift()`: sets array reference to point to elements at indices [1, n] and returns 0th element
+  - `unshift()`: adds item(s) to the beginning of the array and returns the length of the new array
+  - `indexOf()`: returns the index of the value passed in or -1 if that value doesn't exist in the array
+  - `slice()`: returns a new array (shallow copy) including start index and excluding end index (interval [start, end))
 - length: gives size of array even if all elements aren't filled (i.e. array w/ 100 elements but values at indices 1, 2, 99)
 
 ## Var/Let/Const
